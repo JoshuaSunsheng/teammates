@@ -1,10 +1,11 @@
-package teammates.test;
+package teammates.common.datatransfer.attributes;
 
+import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import teammates.common.datatransfer.DataBundle;
 import teammates.common.datatransfer.attributes.StudentAttributes;
+import teammates.test.BaseTestCase;
 
 /**
  * Test cases to check the changes in a studentAttribute's course and team.
@@ -18,7 +19,7 @@ public class ChangeStudentStatusTest extends BaseTestCase {
         ______TS("check current course");
         StudentAttributes student1 = dataBundle.students.get("student1InCourse1");
         String oldCourseName = "idOfTypicalCourse1";
-        assertEquals(oldCourseName, student1.getCourse());
+        Assert.assertEquals(oldCourseName, student1.getCourse());
 
         ______TS("changed course name and check new name is not equals to old name");
         String testNewCourseName = "testNewCourseForStudent1";
